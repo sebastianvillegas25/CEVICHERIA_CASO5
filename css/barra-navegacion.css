@@ -1,0 +1,380 @@
+/*------------SCROOOL DINAMICO--------*/
+html {
+    scroll-behavior: smooth;
+}
+/*-------TIPOGRAFIA EXTERNA------------*/
+@font-face {
+    font-family: "Montserrat";
+    src: url(../font/Montserrat-ExtraLight.ttf) format("truetype");
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../font/Montserrat-Light.ttf) format("truetype");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../font/Montserrat-Medium.ttf) format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../font/Montserrat-Regular.ttf) format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../font/Montserrat-Bold.ttf) format("truetype");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../font/Montserrat-ExtraBold.ttf) format("truetype");
+    font-weight: 900;
+}
+
+
+/*---------VARIABLES-----------*/
+:root {
+    --color-principal:#ffffff;
+    --color-secundario:#05469b;
+    --color-tercero :#a4bcdb;
+    --color-cuarto:#1399D5;
+    --color-quinto:#133358;
+    --color-sexto: #768692;
+}
+
+
+/*------PROPIEDADES GENERALES ---------*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+    box-sizing: border-box;
+}
+p {
+    text-wrap: pretty;
+}
+h1,h2,h3,h4,h5 {
+    text-wrap: balance;
+}
+/*--------TAMAÑO DEL CONTENIDO---------*/
+.box {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/*--------ENCABEZADO Y BARRA DE NAVEGACION----------*/
+header {
+    background-color: var(--color-tercero);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow:  0 0 10px 0 #222;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.header__img {
+    max-width: 150px;
+}
+.header__img img {
+    max-width: 100%;
+    transition: 0.2s;
+}
+.header__img img:hover{
+    transform: scale(1.1);
+}
+.nav {
+    display: none;
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    height: 90vh;
+    width: 100%;
+    background-color: var(--color-principal);
+}
+#checkbox {
+    position: absolute;
+    left: 20px;
+    opacity: 0;
+    width: 23px;
+    height: 23px;
+}
+#checkbox:checked ~ .nav {
+    display: flex;
+}
+.nav__list {
+    margin: auto;
+    list-style: none;
+}
+.nav__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.material-symbols-outlined{
+    color: var(--color-secundario);
+    margin-right: 6px;
+}
+.nav__link {
+    color: var(--color-secundario);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.3rem;
+    position: relative;
+}
+.nav__link:hover {
+    opacity: 0.8;
+}
+.nav__link::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    border-bottom: 3px solid var(--color-secundario);        
+    transition: 0.25s;
+    opacity: 0;
+    width: 0%;
+}
+.nav__link:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+.header__login {
+    display: flex;
+    gap: 15px;
+}
+#text{
+    display:none;
+}
+header i {
+    font-size: 1.6rem;
+    color: var(--color-secundario);
+}
+
+
+
+/*--------PIE DE PAGINA-----------*/
+footer {
+    background-color: var(--color-quinto);
+    color: var(--color-principal);
+    container-type: inline-size;
+}
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+footer h4 {
+    text-decoration: underline;
+}
+footer a {
+    color: var(--color-principal);
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+    font-weight: 500;
+}
+footer ul {
+    width: 200px;
+    list-style: none;
+    margin-bottom: 20px;
+}
+footer li {
+    line-height: 1.8;
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+}
+footer i {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+.footer__img {
+    
+    max-width: 270px;
+    margin: auto;
+}
+.footer__img img {
+    max-width: 100%;
+    filter: drop-shadow(0 0 4px  var(--color-principal));
+}
+
+
+/*-------WHATSAAP FIXED---------*/
+.icon__estatico {
+    position: fixed;
+    bottom: 25px;
+    right: 15px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    background-color: #25d366;
+    border: 5px solid #fff;
+    z-index: 10; 
+    font-weight: 700;
+    width: 58px;
+    transition: 0.5s;    
+}
+.icon__estatico a i {
+    font-size: 2.1rem;     
+    color: #fff;   
+}
+.icon__estatico span {
+    color: #fff;
+    position: absolute;
+    left: 45px;
+    opacity: 0;       
+    bottom: 8px;
+    font-size: 0.7rem;
+    white-space: pre-wrap;    
+    transition: 0s;
+}
+.icon__estatico:hover {
+    width: 200px;
+}
+.icon__estatico:hover span{
+    opacity: 1;
+    transition:opacity 0.2s 0.4s;
+}
+
+/*-------VIDEOS ENLACE--------*/
+.videos__enlace {
+    font-size: 1rem;
+    display: block;
+    position: fixed;
+    z-index: 10;
+    bottom: 25px;
+    left: 15px;
+    color: var(--color-principal);
+    background-color: var(--color-cuarto);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+
+
+@container (min-width:290px) {
+    footer li {
+        font-size: 1rem;
+    }
+    footer i { 
+        font-size: 1.2rem;
+    }
+}
+
+
+
+@container (min-width:640px) {
+    .footer {
+        justify-content: space-between;
+    }
+    footer ul {
+        width:auto;
+    }
+    footer li {
+        line-height: 2;
+        font-size: 1.2rem;
+    }
+}
+/*--------MEDIA QUERY PIE DE PAGINA (700PX)*/
+@media screen and (min-width:700px) {
+
+
+
+    /*------WHATSAAP ICON------*/
+    .icon__estatico {
+        right: 40px;
+        bottom: 40px;
+        width: 80px;
+    }
+    .icon__estatico a i {
+        font-size:3.7rem;
+    }
+    .icon__estatico:hover {
+        width: 300px;
+    }
+    .icon__estatico a span{
+        font-size: 1rem;
+        bottom: 15px;
+        left: 70px;
+    }
+
+    /*-----VIDEOS TILWIN--------*/
+    .videos__enlace {
+        left: 40px;
+        bottom: 40px;
+        font-size: 2.5rem;
+    }
+}
+
+/*----------MEDIA QUERY BARRA DE NAVEGACION-----------*/
+@media screen and (min-width: 800px) {
+    .header > i, #checkbox {
+        display: none;
+    }
+    .nav {
+        display: inline;
+        position: relative;
+        background-color: transparent;
+        height: auto;
+        width: auto;
+    }
+    .nav__list {
+        display: flex;
+        gap: 20px;
+    }
+    .nav__item {
+        position: relative;
+        line-height: 1;
+        margin: 0;
+    }
+    .nav__link {
+        font-size: 1.1rem;
+    }
+    .link-resalta {
+        color: var(--color-quinto);
+        border-bottom: 2px solid var(--color-quinto);
+    }
+    .header span {
+        position: absolute;
+        left: 20px;
+        bottom: 0px;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .nav__item:hover  span {
+        bottom: 20px;
+        opacity: 1;
+    }
+
+
+
+}
+
+
+/*----------BARRA DE NAVEGACION---------*/
+@media screen and (min-width:1000px) {
+    #text {
+        display: inline;
+        border: none;
+        border-bottom: 2px solid var(--color-secundario);
+        background-color: transparent;
+        font-weight: 500;
+    }
+    #text:focus-visible {
+        outline: none;
+    }
+    ::placeholder {
+        color: var(--color-secundario);
+    }
+}
+
+
+
