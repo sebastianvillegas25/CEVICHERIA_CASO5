@@ -1,0 +1,48 @@
+
+/*---------VARIABLES---------*/
+:root {
+    --color-principal:#ffffff;
+    --color-secundario:#05469b;
+    --color-tercero :#a4bcdb;
+    --color-cuarto:#1399D5;
+    --color-quinto:#133358 ;
+    --color-sexto: #768692;
+}
+
+/*----------BANNER---------}*/
+.banner {
+    background: url(../img/index/banner2.avif) center / cover ;
+    height: 600px;
+}
+.banner__overlay {
+    background-color: #0008;      
+}
+.banner__conte {
+    color: var(--color-principal);    
+    text-align: center;
+    font-weight: 900;    
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 0 20px;
+}
+span {
+    color: #2faed3;
+}
+.banner__conte a {
+    background-color: var(--color-secundario);
+    padding: 8px 12px;
+    color: var(--color-principal);
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 10px 10px 0 0;
+    transition-duration: 0.2s;
+}
+.banner__conte a:hover{
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    outline: 5px solid var(--color-secundario);    
+    box-shadow: 0 0 30px 0 #fff;
+}
