@@ -9,7 +9,7 @@ Un sitio web responsive para "El Molinero", un restaurante peruano especializado
 - Noel Ayala Camarena
 
 ## 🔗 Sitio Web
-[Cevichería El Molinero](https://caso2cevicheriaelmolinero.on.drv.tw/Cevicheria/Cevicheria/)
+[Cevichería El Molinero](https://cevicheria-el-molinero.netlify.app/)
 
 ## 📋 Descripción General
 
